@@ -1,0 +1,512 @@
+/* Fondo como el login */
+.page {
+  min-height: 100vh;
+  background: linear-gradient(185deg, #272626, #e0dfdf);
+  padding-bottom: 40px;
+}
+
+/* contenedor interior para scopes */
+.shell {
+  max-width: 1100px;
+}
+
+/* Título */
+.title {
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: .2px;
+  padding-bottom: 15px;
+
+}
+
+/* Tarjetas (unificadas) */
+.card {
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(255, 253, 253, 0.658);
+}
+
+/* Lista de categorías */
+.listGroup { border-radius: 12px; overflow: hidden; }
+
+.catBtn {
+  border: 0 !important;
+  padding: 12px 14px;
+  background: #000000;
+  color: #ffffff;
+  transition: transform .12s ease, background .2s ease;
+}
+.catBtn:hover { transform: translateX(2px); background: #000000; }
+.catBtnActive {
+  background: #3a3a3f !important;
+  color: #fff !important;
+}
+
+/* Inputs y controles dentro del panel (scope para no tocar todo Bootstrap) */
+.shell :global(.form-control) {
+  background: linear-gradient(185deg, #696868, #000000);
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+}
+.shell :global(.form-control::placeholder) { color: #cfcfcf; opacity: .85; }
+.shell :global(.form-control:focus) {
+  background: #3a3a3f;
+  box-shadow: 0 0 0 2px rgba(255,255,255,.08);
+  color: #ffffff;
+}
+
+/* Botones coherentes con tu login */
+.shell :global(.btn-primary) {
+  background: #3a3a3f;
+  border: 0;
+  border-radius: 30px;
+  font-weight: 700;
+}
+
+.shell :global(.btn-primary:hover) {
+  background: #f3f3f3;
+  color: #302f2f;
+}
+
+
+
+/* Tarjeta de media */
+.mediaCard {
+  border: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+.mediaCard :global(.card-img-top) {
+  object-fit: cover;
+  height: 150px;
+}
+
+/* Video */
+.video {
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+  background: #000;
+  border-radius: 12px;
+}
+
+/* Card oscura (úsala también en subir imagen y subir video) */
+.accentCard {
+  background: linear-gradient(185deg, #3a3a3f, #151515);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+}
+
+/* ====== Inputs de archivo con look a tu tema ====== */
+.shell :global(input[type="file"].form-control) {
+  background: linear-gradient(185deg, #696868, #000000);
+  color: #ffffff;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+/* Botón del selector de archivos (Chrome/Edge/Opera) */
+.shell :global(input[type="file"]::file-selector-button) {
+  background: #2b2b2b;
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background .2s;
+}
+.shell :global(input[type="file"]::file-selector-button:hover) {
+  background: #706a6a;
+  color: #302f2f;
+}
+
+
+/* Input-group del URL + botón */
+.shell :global(.input-group) { gap: 10px; }
+.shell :global(.input-group .form-control) {
+  background: linear-gradient(185deg, #696868, #000000);
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+}
+.shell :global(.input-group .btn) {
+  border-radius: 10px !important;
+}
+
+/* Botón outline para que combine con tu tema */
+.shell :global(.btn-outline-primary) {
+  color: #e6e6e6;
+  border-color: #4a4a4a;
+  background: transparent;
+}
+.shell :global(.btn-outline-primary:hover) {
+  background: #b8b4b4;
+  color: #302f2f;
+  border-color: #b8b4b4;
+}
+
+/* Chips/ayudas a la derecha (el span "Subir imagen/video") */
+.helperTag {
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: .9rem;
+  white-space: nowrap;
+}
+
+/* === Cards personalizables según el TSX nuevo === */
+/* Puedes cambiar colores/gradientes sin afectar a otras tarjetas */
+.createCategoryCard {
+  /* estilo por defecto (claro). cámbialo a tu gusto */
+  background: #000000;
+}
+
+/* Estas dos salen oscuras por defecto (como pediste) */
+.uploadImageCard,
+.uploadVideoCard {
+  background: black;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+/* === Input de archivo con look del tema === */
+.fileInput {
+  background: linear-gradient(185deg, #696868, #000000);
+  color: #ffffff !important;
+  border: 0 !important;
+  border-radius: 10px !important;
+  padding: 10px 14px !important;
+}
+
+/* Botón del selector (Chrome/Edge/Opera) */
+.fileInput::file-selector-button {
+  background: #2b2b2b;
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.fileInput::file-selector-button:hover {
+  background: #b8b4b4;
+  color: #302f2f;
+}
+
+/* Safari/WebKit fallback */
+.fileInput::-webkit-file-upload-button {
+  background: #2b2b2b;
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* === Chip/ayuda al costado ("Subir imagen"/"Subir video") === */
+.helperTag {
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: .9rem;
+  white-space: nowrap;
+}
+
+/* === Grupo de URL (para Añadir video por URL) === */
+.urlGroup {
+  /* te deja margen propio sin tocar el input-group global */
+  margin-top: 8px;
+}
+
+/* Mejora visual del card de media */
+.mediaCard {
+  border: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 14px 28px rgba(0,0,0,.28);
+  background: #111; /* para que los bordes y el espacio bajo el textarea sean oscuros */
+}
+
+/* Contenedor del cuerpo (textarea + botones) */
+.mediaBody {
+  background: linear-gradient(185deg, #2a2a2a, #141414);
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+/* Textarea oscuro coherente */
+.descArea {
+  background: linear-gradient(185deg, #696868, #000000) !important;
+  color: #fff !important;
+  border: 0 !important;
+  border-radius: 10px !important;
+  min-height: 90px;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+.descArea::placeholder {
+  color: #cfcfcf;
+  opacity: .9;
+}
+
+/* Acciones en fila, con separación */
+.mediaActions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Botón guardar – estilo principal oscuro */
+.btnSave {
+  flex: 1;
+  background: #3a3a3f;
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.btnSave:hover { background: #f3f3f3; color: #302f2f; }
+
+/* Botón eliminar – outline en rojo pero adaptado a tema oscuro */
+.btnDelete {
+  flex: 0 0 auto;
+  background: transparent;
+  color: #ff6d6d;
+  border: 1px solid rgba(255, 109, 109, .4);
+  border-radius: 10px;
+  padding: 6px 12px;
+  font-weight: 600;
+}
+.btnDelete:hover {
+  background: rgba(255, 109, 109, .12);
+  border-color: rgba(255, 109, 109, .6);
+  color: #ffd6d6;
+}
+
+/* Imagen del card */
+.mediaCard :global(.card-img-top) {
+  object-fit: cover;
+  height: 180px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+/* Video ya tenía .video; ajusto bordes para integrarlo al card */
+.video {
+  box-shadow: none;
+  border-radius: 0 !important;
+  background: #000;
+}
+
+/* Responsive: en pantallas estrechas, botones a dos filas */
+@media (max-width: 420px) {
+  .mediaActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btnDelete, .btnSave {
+    width: 100%;
+  }
+}
+
+/* Columna izquierda con respiración entre bloques */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;                 /* ← espacio vertical entre todos los hijos */
+}
+
+/* Un poquito más de espacio bajo la lista y el botón de eliminar */
+.leftColumn .listGroup { margin-bottom: 4px; }
+.leftColumn .dangerOutline { align-self: flex-start; } /* mantiene ancho del botón */
+ 
+/* Más padding dentro de las tarjetas negras para que no se sientan apretadas */
+.leftColumn :global(.card.card-body) {
+  padding: 18px 20px;
+  border-radius: 14px;
+}
+
+/* En pantallas pequeñas, un poco más de hueco */
+@media (max-width: 576px) {
+  .leftColumn { gap: 22px; }
+}
+
+/* ---- Layout robusto para filas de "Redes sociales" (evita desbordes) ---- */
+.formRow {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr) auto; /* etiqueta | input elástico | botón */
+  align-items: center;
+  gap: 10px;
+}
+
+.formLabel { text-align: right; }
+
+.formField { min-width: 0; }          /* clave: permite que el input se encoja sin romper */
+.formField :global(.form-control) { width: 100%; }
+
+.formAction { min-width: 96px; }      /* ancho mínimo para "Guardar" */
+.formAction :global(.btn) { width: 100%; }
+
+/* Tarjetas negras: oculta cualquier resto de márgenes negativos externos */
+.createCategoryCard { overflow: hidden; }
+
+/* En pantallas medianas/estrechas, apila en vertical (nunca se sale) */
+@media (max-width: 1200px) {
+  .formRow {
+    grid-template-columns: 100px minmax(0, 1fr) auto;
+  }
+}
+@media (max-width: 992px) {
+  .formRow {
+    grid-template-columns: 1fr; /* etiqueta, input y botón uno debajo del otro */
+  }
+  .formLabel { text-align: left; }
+  .formAction { min-width: 0; }
+}
+
+/* Grid que da máximo espacio al input y baja el botón debajo */
+.formRowGrid {
+  display: grid;
+  grid-template-columns: 96px 1fr;   /* etiqueta | input bien ancho */
+  grid-template-areas:
+    "label field"
+    ".     action";
+  gap: 10px 12px;
+  align-items: center;
+}
+
+.formLabel  { grid-area: label;  text-align: left; white-space: nowrap; }
+.formField  { grid-area: field;  min-width: 0; }
+.formAction { grid-area: action; justify-self: start; }
+
+.formField :global(.form-control) { width: 100%; }
+
+/* Que el botón no deforme nada; ancho contenido */
+.formAction :global(.btn) { width: auto; }
+
+/* En móviles, todo en columna y el botón a 100% si quieres */
+@media (max-width: 576px) {
+  .formRowGrid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "label"
+      "field"
+      "action";
+  }
+  .formAction { justify-self: stretch; }
+  .formAction :global(.btn) { width: 100%; }
+}
+
+/* La col izq NO iguala la altura del row (deja de estirarse) */
+.colNoStretch { align-self: flex-start; }
+
+/* Las tarjetas negras de la izq no “rellenan” altura */
+.compactCard {
+  height: auto !important;
+  flex: 0 0 auto;          /* no crecer en el eje principal */
+}
+
+/* (ya tenías) pila con aire entre bloques */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Opcional: más aire dentro de esas tarjetas */
+.leftColumn :global(.card.card-body) { padding: 18px 20px; }
+
+/* ====== NUEVO: badges, stats, grids y acordeón ====== */
+.stats { display:flex; gap:8px; flex-wrap:wrap; }
+.statPill{
+  background: rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  color:#fff; padding:4px 8px; border-radius:999px; font-size:.85rem;
+}
+
+.badgeSlide{
+  background: linear-gradient(90deg,#24c6c8,#6ee7e7);
+  color:#0b0f14; font-weight:800; padding:2px 8px; border-radius:999px; font-size:.75rem;
+}
+.badgeItem{
+  background: #2f2f34; color:#e9e9ea; font-weight:700; padding:2px 8px; border-radius:999px; font-size:.75rem;
+}
+.typeChip{
+  background:#151515; color:#d8d8d8; padding:2px 6px; border-radius:6px; font-size:.7rem; border:1px solid rgba(255,255,255,.08);
+}
+.posChip{
+  background:#000; color:#cfcfcf; padding:2px 6px; border-radius:6px; font-size:.7rem; border:1px dashed rgba(255,255,255,.1);
+}
+.keyPill{
+  background:#111; color:#bfe7e7; padding:2px 8px; border-radius:999px; border:1px solid rgba(110,231,231,.25); font-size:.75rem;
+}
+
+.dropCardSlide{ border:1px solid rgba(110,231,231,.25); background: linear-gradient(185deg,#0e0e0f,#161a1a); }
+.dropCardItem{ border:1px solid rgba(255,255,255,.12); background: linear-gradient(185deg,#0e0e0f,#141414); }
+.selectBtn{
+  background:#3a3a3f; color:#fff; border:0; border-radius:10px; padding:4px 8px;
+}
+.selectBtn:hover{ background:#f3f3f3; color:#302f2f; }
+
+.slideGroup{
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:12px; padding:12px; margin-bottom:16px;
+  background: linear-gradient(185deg,#0c0c0c,#121212);
+}
+.slideHeader{
+  display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:10px;
+}
+.countPill{ background:#1a1a1a; color:#eee; border:1px solid rgba(255,255,255,.08); padding:2px 8px; border-radius:999px; font-size:.75rem; }
+
+.slidePreview{
+  display:grid; place-items:center; overflow:hidden; border-radius:10px; margin-bottom:10px;
+  background:#000; max-height:260px;
+}
+.slidePreview img, .slidePreview video{ width:100%; max-height:260px; object-fit:cover; display:block; }
+
+.itemsGrid{
+  display:grid; gap:14px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+.itemCard{
+  background:#0f0f0f; border:1px solid rgba(255,255,255,.06); border-radius:12px; padding:10px;
+}
+.itemHeader{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:8px; }
+.itemMediaBox{
+  background:#000; border-radius:10px; overflow:hidden; height:160px; display:grid; place-items:center;
+}
+.itemMediaBox img, .itemMediaBox video{ width:100%; height:100%; object-fit:cover; }
+
+.flatGrid{
+  display:grid; gap:14px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+.flatCard{
+  background:#0f0f0f; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.06);
+}
+.flatCard .itemHeader{ padding:10px; }
+.flatCard .itemMediaBox{ height:170px; }
+.flatSlide{ box-shadow: 0 0 0 2px rgba(110,231,231,.25) inset; }
+.flatItem{ box-shadow: 0 0 0 1px rgba(255,255,255,.12) inset; }
+
+/* Reutilizables que ya usas */
+.fileInput{
+  background: linear-gradient(185deg, #696868, #000000) !important;
+  color:#ffffff !important; border:0 !important; border-radius:10px !important; padding:10px 14px !important;
+}
+.fileInput::file-selector-button{
+  background:#2b2b2b; color:#fff; border:0; border-radius:8px; padding:8px 12px; margin-right:10px; cursor:pointer;
+}
+.descArea{
+  background: linear-gradient(185deg, #696868, #000000) !important;
+  color:#fff !important; border:0 !important; border-radius:10px !important;
+}

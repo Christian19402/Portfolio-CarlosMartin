@@ -1,0 +1,143 @@
+/* Contenedor principal (envoltorio del <nav>) */
+.siteNav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  /* Vidrio translúcido con blur */
+  background: rgba(27, 27, 28, 0.825);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border-bottom: 3px solid rgba(110, 231, 231, 0.18);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Ajuste del contenedor para pegar brand a la izquierda */
+.siteNav :global(.container-fluid) {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* Brand */
+.siteNav :global(.navbar-brand) {
+  color: #eaf8f981 !important;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: start;
+}
+.siteNav :global(.navbar-brand:hover) {
+  color: #479696 !important;
+}
+
+/* Estructura interna del collapse */
+.navbarLine {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* UL centrado */
+.navCenter {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Links del menú */
+.siteNav :global(.nav-link) {
+  position: relative;
+  color: #e9f5f78a !important;
+  font-weight: 400;
+  padding: 0.5rem 0.9rem !important;
+  opacity: 0.95;
+  transition: color 0.2s ease, opacity 0.2s ease, transform 0.15s ease;
+  letter-spacing: 0.1em;
+}
+
+
+/* Subrayado animado */
+.siteNav :global(.nav-link)::after {
+  content: "";
+  position: absolute;
+  left: 0.8rem;
+  right: 0.8rem;
+  bottom: 6px;
+  height: 2px;
+  background: linear-gradient(90deg, #24c6c8, #6ee7e7);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+  border-radius: 2px;
+}
+.siteNav :global(.nav-link:hover) {
+  color: #6ee7e7 !important;
+  opacity: 1;
+}
+.siteNav :global(.nav-link:hover)::after,
+.siteNav :global(.nav-link:focus)::after {
+  transform: scaleX(1);
+}
+
+/* Botón CV: estilo turquesa */
+.siteNav :global(.btn-outline-primary) {
+  --bs-btn-color: #82e6e6d2;
+  --bs-btn-border-color: #82e6e6d2;
+  --bs-btn-hover-color: #0b0f14;
+  --bs-btn-hover-bg: #479696;
+  --bs-btn-hover-border-color: #479696;
+  --bs-btn-focus-shadow-rgb: 110, 231, 231;
+  --bs-btn-active-bg: #43d3d6;
+  --bs-btn-active-border-color: #43d3d6;
+  border-width: 2px;
+  font-weight: 500;
+  padding: 0.4rem 0.9rem;
+  border-radius: 10px;
+  transition: transform 0.15s ease, box-shadow 0.25s ease;
+}
+.siteNav :global(.btn-outline-primary:hover) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(110, 231, 231, 0.25);
+}
+
+/* Toggler (hamburguesa) */
+.siteNav :global(.navbar-toggler) {
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
+.siteNav :global(.navbar-toggler:focus) {
+  box-shadow: 0 0 0 0.2rem rgba(110, 231, 231, 0.25);
+}
+.siteNav :global(.navbar-toggler-icon) {
+  filter: invert(1) opacity(0.9);
+}
+
+/* Fondo del menú colapsado en móviles */
+@media (max-width: 991.98px) {
+  .navbarLine { 
+    display: block; 
+  }
+  .navCenter {
+    margin: 8px 0 0 0;
+    justify-content: flex-start;
+    gap: 0.1rem;
+    flex-wrap: wrap;
+  }
+  .siteNav :global(.navbar-collapse) {
+    background: rgba(10, 14, 20, 0.75);
+    border-radius: 16px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid rgba(110, 231, 231, 0.16);
+  }
+  .siteNav :global(.nav-link)::after {
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 4px;
+  }
+}
+
+

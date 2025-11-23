@@ -1,0 +1,281 @@
+.pageBg {
+  color: #ffffff;
+  background: #0b0b0b;
+  min-height: 100vh;
+  width: 100%;
+  padding-bottom: 80px;
+  overflow-x: hidden;
+}
+
+.contactContainer {
+  --media-max: 880px;
+  --panel-bg: rgba(255, 255, 255, 0.03);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px 24px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 500;
+  margin: 0 0 12px;
+  letter-spacing: 0.1em;
+  color: #6ee7e7;
+  padding-top: 50px;
+}
+
+/* ================= Tira animada ================= */
+.thumbStrip {
+  width: 100%;
+  overflow: hidden;
+  height: var(--thumb-h, 190px);
+  margin: 70px 0 34px;
+  position: relative;
+}
+
+.thumbTrack {
+  display: flex;
+  gap: 28px;
+  animation: scrollThumbs var(--thumb-speed, 20s) linear infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+/* 🖱️ Pausa al pasar el mouse */
+.thumbStrip:hover .thumbTrack {
+  animation-play-state: paused;
+}
+.thumb {
+  flex: 0 0 auto;
+  width: calc(var(--thumb-h, 190px) * 16 / 9);
+  height: var(--thumb-h, 190px);
+  overflow: hidden;
+  border-radius: 10px;
+  background: #000;
+}
+/* ✨ Efecto de brillo y zoom suave en las miniaturas */
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: transform 0.5s ease, filter 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Cuando pasas el mouse por encima */
+.thumb:hover img {
+  transform: scale(1.08); /* zoom suave */
+  filter: brightness(1.05); /* un poco más claro */
+  box-shadow: 0 0 20px rgba(110, 231, 231, 0.3); /* halo turquesa sutil */
+}
+
+@keyframes scrollThumbs {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ================= Dos columnas ================= */
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+  margin: 120px 0 0 0;
+}
+.intro {
+  color: #f8f8f8;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+.textCard {
+  max-width: 100%;
+  padding: 18px 20px;
+}
+.richText {
+  white-space: pre-line;
+  line-height: 1.6;
+  
+}
+
+/* ================= Redes sociales ================= */
+.socialRow {
+  margin: 100px 0 32px;
+}
+.socialIcons {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  font-size: 60px;
+}
+.socialIcons a {
+  color: #ffffff;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.9;
+  transition: transform 0.25s ease, color 0.25s ease, opacity 0.25s ease;
+}
+.socialIcons a:hover {
+  color: #248b8b;
+  opacity: 1;
+  transform: translateY(-1px);
+}
+.artstationMask {
+  display: inline-block;
+  width: 5.5rem;
+  height: 5.5rem;
+  background-color: currentColor;
+  -webkit-mask: url("/artstation-mask.png") no-repeat center / contain;
+  mask: url("/artstation-mask.png") no-repeat center / contain;
+}
+
+/* ================= Bloques dinámicos ================= */
+.blocks {
+  display: grid;
+  gap: 80px;
+  margin: 70px 0 36px;
+}
+.mediaWrapper {
+  position: relative;
+  width: 100%;
+  max-width: var(--media-max);
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  overflow: hidden;
+}
+.mediaFill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+}
+.mediaShadow {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+.figure {
+  max-width: var(--media-max);
+  margin: 0 auto;
+}
+.caption {
+  color: #9fb9bb;
+  font-size: 0.95rem;
+  margin-top: 8px;
+  text-align: left;
+}
+
+/* ===================================================== */
+/* === FORMULARIO: alineado con la palabra “Envíame” === */
+/* ===================================================== */
+.gridForm {
+  /* Variables ajustables */
+  --form-max: 1500px;   /* controla el ancho máximo del formulario */
+  --left-gutter: 10px; /* margen izquierdo para alinear con “Envíame” */
+
+  display: grid;
+  grid-template-columns: var(--left-gutter) min(var(--form-max), 100%) 1fr;
+  align-items: start;
+  margin: 120px 0 0 0;
+}
+
+.formCenter {
+  grid-column: 2;
+  width: 100%;
+}
+
+
+.formTitle {
+  font-size: 40px;
+  font-weight: 500;
+  margin: 0 0 40px;
+  letter-spacing: 0.1em;
+  color: #6ee7e7;
+}
+
+.formCard {
+  width: 100%;
+  margin: 0;
+  background: var(--panel-bg);
+  border: 1px solid rgba(110, 231, 231, 0.08);
+  padding: 18px 20px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 6px;
+  color: #bde4e4;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(110, 231, 231, 0.12);
+  color: #e7f6f6;
+  border-radius: 10px;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 120ms ease, box-shadow 200ms ease;
+}
+.input:focus,
+.textarea:focus {
+  border-color: #43d3d6;
+  box-shadow: 0 0 0 3px rgba(67, 211, 214, 0.18);
+}
+
+.btnSend {
+  background: linear-gradient(90deg, #24c6c8, #6ee7e7);
+  color: #0b0f14;
+  border: 0;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: transform 120ms ease, box-shadow 200ms ease, opacity 120ms ease;
+}
+.btnSend:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(110, 231, 231, 0.25);
+}
+.btnSend:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.successMsg {
+  width: 100%;
+  margin: 0 auto 12px;
+  color: #7ee6b3;
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 1000px) {
+  .twoCol {
+    grid-template-columns: 1fr;
+  }
+  .gridForm {
+    grid-template-columns: 1fr;
+    --left-gutter: 0px;
+  }
+  .formCenter {
+    grid-column: 1;
+  }
+}
+@media (max-width: 640px) {
+  .contactContainer {
+    padding: 24px 16px;
+  }
+  .socialIcons {
+    gap: 28px;
+  }
+  .thumbStrip {
+    --thumb-h: 150px;
+  }
+}
+
+.intro {
+  white-space: pre-line;
+}
+

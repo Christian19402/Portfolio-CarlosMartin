@@ -1,0 +1,103 @@
+/* Página */
+.loginPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(185deg, #696868, #000000);
+}
+
+/* Contenedor */
+.loginContainer {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 28px 28px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  position: relative;
+}
+
+/* Círculo superior con la chinchilla */
+.logoCircle {
+  width: 150px;
+  height: 150px;
+  background-color: #3d3d3d;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -95px auto 20px auto; /* Sube el círculo sobre el borde */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  border: 4px solid #fff;
+  position: relative;
+  z-index: 2;
+}
+
+/* Imagen de la chinchilla */
+.logoImage {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+/* Error */
+.error {
+  color: #ff4d4d;
+  background: rgba(255, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+/* Formulario */
+.loginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input general */
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(185deg, #696868, #000000);
+  color: #fff;
+  margin-bottom: 14px;
+  outline: none;
+  transition: 0.25s;
+}
+
+.input::placeholder {
+  color: #ccc;
+  opacity: 0.8;
+}
+
+.input:focus {
+  background: #3a3a3f;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+
+/* Contenedor contraseña */
+.passwordWrapper {
+  position: relative;
+}
+
+/* Botón login */
+.loginBtn {
+  padding: 12px;
+  border: 0;
+  border-radius: 10px;
+  background: #3a3a3f;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.loginBtn:hover {
+  background: #b8b4b4;
+  color: #302f2f;
+}
